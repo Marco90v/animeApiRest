@@ -1,38 +1,126 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+*{
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+  font-family: 'Oswald', sans-serif;
+  font-size: 14px;
+}
+header.cabecera{
+  background-color: black;
+  color: white;
+  padding-bottom: 1rem;
+}
+header.cabecera > nav {
   text-align: center;
+  overflow: hidden;
+  transition: all .5s ease-in-out;
+  height: 0rem;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+header.cabecera > nav.active {
+  height: 15rem;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+header.cabecera > h1{
+  font-size: 3rem;
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+header.cabecera > h1 > div.buttonMenu{
+  position: relative;
+  width: 3rem;
+  height: 3rem;
+  cursor: pointer;
+}
+div.buttonMenu > svg{
+  position: absolute;
+  width: 3rem;
+  height: 3rem;
+  transition: all .2s ease-in-out;
+}
+div.buttonMenu > svg:nth-child(1){
+  transform: scale(1);
+  opacity: 1;
+}
+div.buttonMenu > svg:nth-child(2){
+  transform: scale(0);
+  opacity: 0;
+}
+div.buttonMenu.active > svg:nth-child(1){
+  transform: scale(0);
+  opacity: 0;
+}
+div.buttonMenu.active > svg:nth-child(2){
+  transform: scale(1);
+  opacity: 1;
+}
+header.cabecera > nav > ul {
+  list-style: none;
+}
+header.cabecera > nav > ul > li {
+  padding: 1rem;
+  cursor: pointer;
+}
+header.cabecera > nav > ul > li > a {
+  font-size: 1.5rem;
+  text-decoration: none;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+header.cabecera > nav > ul > li:hover > a {
+  color: #0000ff54;
+  transition: all .5s ease-in-out;
+}
+header.cabecera > .search{
+  margin: 1rem;
+}
+.search > form > input, .search > form > button{
+  font-size: 1.5rem;
+}
+.search > form > input{
+  border-radius: 5px 0 0 5px;
+  padding: 0 .5rem 0 .5rem;
+}
+.search > form > button{
+  color: white;
+  background-color: blue;
+  padding: 0 1rem;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+}
+.search > form > button:hover{
+  background-color: #0000ff54;
+  transition: all .5s ease-in-out;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+main > h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin: 1rem;
+}
+main > .content > ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+}
+main > .content > ul > li {
+  margin: 2rem;
+  background-color: #0178f7;
+  padding: .5rem;
+  border-radius: .5rem;
+  box-shadow: 1px 1px 5px 1px black;
+  max-width: 239px;
+  transition: all .2s ease-in-out;
+}
+main > .content > ul > li:hover {
+  transform: scale(1.1);
+  box-shadow: 5px 5px 20px 5px black;
+}
+
+@media (min-width:768px) {
+  main{
+    max-width: 1440px;
+    margin: auto;
   }
 }
