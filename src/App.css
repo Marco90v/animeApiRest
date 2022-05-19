@@ -11,6 +11,7 @@ header.cabecera{
   background-color: black;
   color: white;
   padding-bottom: 1rem;
+  padding-top: 1rem;
 }
 header.cabecera > nav {
   text-align: center;
@@ -105,6 +106,7 @@ main > .content > ul {
   list-style: none;
 }
 main > .content > ul > li {
+  cursor: pointer;
   margin: 2rem;
   background-color: #0178f7;
   padding: .5rem;
@@ -122,5 +124,20 @@ main > .content > ul > li:hover {
   main{
     max-width: 1440px;
     margin: auto;
+  }
+  header.cabecera{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  }
+  header.cabecera > h1, nav, nav > ul, nav > ul > li, .search, .search > form {
+    display: inline;
+  }
+  header.cabecera > h1 > .buttonMenu{
+    display: none;
+  }
+  header.cabecera > nav{
+    height: auto;
   }
 }
