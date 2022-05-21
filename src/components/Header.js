@@ -1,8 +1,8 @@
 import { useState } from "react"
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
-    const [activeMenu, setActiveMenu] = useState(false)
+    const [activeMenu, setActiveMenu] = useState(false);
     const changeMenu = () => {
         setActiveMenu(!activeMenu);
     }
@@ -21,14 +21,14 @@ const Header = () => {
             </h1>
             <nav className={activeMenu ? 'active' : ''}>
                 <ul>
-                    <li><Link to="/">Top</Link></li>
-                    <li><Link to="/watch">Watch</Link></li>
-                    <li><Link to="/Recommendations">Recommendations</Link></li>
+                    <li><NavLink to="/" className={ ({isActive}) => isActive ? 'active' : undefined }>TOP</NavLink></li>
+                    <li><NavLink to="/watch" className={ ({isActive}) => isActive ? 'active' : undefined }>WATCH</NavLink></li>
+                    <li><NavLink to="/Recommendations" className={ ({isActive}) => isActive ? 'active' : undefined }>RECOMMENDATIONS</NavLink></li>
                 </ul>
                 <div className="search">
                     <form action="">
                         <input type="text" name="search" id="" />
-                        <button type="submit">Search</button>
+                        <button type="submit">SEARCH</button>
                     </form>
                 </div>
             </nav>
