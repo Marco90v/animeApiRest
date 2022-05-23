@@ -107,6 +107,9 @@ main > h2 {
   font-size: 2rem;
   margin: 1rem;
 }
+main > .content {
+  margin-top: 5rem;
+}
 main > .content > ul {
   display: flex;
   flex-wrap: wrap;
@@ -160,34 +163,13 @@ main > .content > ul > li > p{
   display: flex;
   justify-content: center;
   gap: 2rem;
-}
-/* .pagination > ul{
-  list-style: none;
-  display: flex;
-  justify-content: center;
   flex-wrap: wrap;
-  gap: 2rem;
-} */
-/* .pagination > ul > li{
-  cursor: pointer;
-  width: 2rem;
-  height: 2rem;
-  text-align: center;
-  line-height: 2rem;
-  border-radius: 5px;
-  border: 1px solid grey;
-  box-shadow: 0 0 3px 1px grey;
-  transition: all .2s ease-in-out;
-} */
-/* .pagination > ul > li:hover{
-  box-shadow: 0 0 8px 1px grey;
-  font-weight: bold;
-} */
-.pagination > form > input[type=number]::-webkit-inner-spin-button,
-.pagination > form > input[type=number]::-webkit-outer-spin-button {
+}
+.pagination > input[type=number]::-webkit-inner-spin-button,
+.pagination > input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
 }
-.pagination > form > input[type=number] {
+.pagination > input[type=number] {
   -moz-appearance:textfield;
   text-align: center;
   border: 1px solid grey;
