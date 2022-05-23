@@ -28,7 +28,7 @@ header.cabecera > h1{
   justify-content: space-around;
   align-items: center;
 }
-header.cabecera > h1 > div.buttonMenu{
+div.buttonMenu{
   position: relative;
   width: 3rem;
   height: 3rem;
@@ -69,7 +69,8 @@ header.cabecera > nav > ul > li > a {
   color: white;
 }
 header.cabecera > nav > ul > li > a.active{
-  border-radius: 100%;
+  border-radius: 3px;
+  border-bottom: 1px solid white;
   background-color: #0000ff4f;
   box-shadow: 0px 0px 10px 1px #0000ff6e;
 }
@@ -120,6 +121,8 @@ main > .content > ul > li {
   overflow: hidden;
   position: relative;
   transition: all .2s ease-in-out;
+  min-width: 225px;
+  min-height: 354px;
 }
 main > .content > ul > li > picture > img {
   height: 100%;
@@ -152,10 +155,65 @@ main > .content > ul > li > p{
   padding: 0 0.5rem;
   border-radius: 1rem;
 }
+.pagination{
+  margin-top: 4rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+/* .pagination > ul{
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+} */
+/* .pagination > ul > li{
+  cursor: pointer;
+  width: 2rem;
+  height: 2rem;
+  text-align: center;
+  line-height: 2rem;
+  border-radius: 5px;
+  border: 1px solid grey;
+  box-shadow: 0 0 3px 1px grey;
+  transition: all .2s ease-in-out;
+} */
+/* .pagination > ul > li:hover{
+  box-shadow: 0 0 8px 1px grey;
+  font-weight: bold;
+} */
+.pagination > form > input[type=number]::-webkit-inner-spin-button,
+.pagination > form > input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+.pagination > form > input[type=number] {
+  -moz-appearance:textfield;
+  text-align: center;
+  border: 1px solid grey;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  width: 4rem;
+}
+.pagination > button {
+  cursor: pointer;
+  background-color: white;
+  padding: 0 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 5px 1px rgb(128 128 128 / 50%);
+  transition: all .2s ease-in-out;
+}
+.pagination > button:hover {
+  box-shadow: 0 0 8px 1px rgb(0 0 0 / 50%);
+  background-color: blue;
+  color: white;
+  /* font-weight: bold; */
+}
+
 @media (min-width:768px) {
   main{
     max-width: 1440px;
-    margin: auto;
+    margin: 1rem;
   }
   header.cabecera{
     display: flex;
