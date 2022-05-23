@@ -54,13 +54,13 @@ const Top = () => {
     return(
         <>
             { loading && <Spinner /> }
-                <div className='content'>
-                    <ul>
-                        {
-                            data.dataItems.map( item => <Card key={ item.mal_id } anime={ item } /> )
-                        }
-                    </ul>
-                </div>
+            <div className='content'>
+                <ul>
+                    {
+                        data.dataItems.map( item => <Card key={ item.mal_id } anime={ item } /> )
+                    }
+                </ul>
+            </div>
             {data.dataPage.last_visible_page > 0 && <Pagination pagination={data.dataPage} handleChange={getFetch} />}
         </>
     )

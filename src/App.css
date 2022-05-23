@@ -236,6 +236,7 @@ main > .content > ul > li > p{
   main{
     max-width: 1440px;
     margin: auto;
+    padding: 0 1rem;
   }
   header.cabecera{
     display: flex;
