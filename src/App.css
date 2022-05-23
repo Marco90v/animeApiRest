@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+:root{
+  --myblue:#09f;
+}
 *{
   padding: 0;
   margin: 0;
@@ -6,6 +9,37 @@
   box-sizing: border-box;
   font-family: 'Oswald', sans-serif;
   font-size: 14px;
+}
+.contentSpinner{
+  background-color: rgb(0 0 0 / 30%);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: 1000;
+}
+.spinner{
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border-left-color: var(--myblue);
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* transform: translate(-50%, -50%); */
+  animation: spin 1s ease infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 header.cabecera{
   background-color: black;
@@ -93,7 +127,7 @@ header.cabecera > nav > .search{
 }
 .search > form > button{
   color: white;
-  background-color: blue;
+  background-color: var(--myblue);
   padding: 0 1rem;
   border-radius: 0 5px 5px 0;
   cursor: pointer;
@@ -101,6 +135,12 @@ header.cabecera > nav > .search{
 }
 .search > form > button:hover{
   background-color: green;
+}
+main{
+  max-width: 1440px;
+  /* margin: 1rem; */
+  /* height: calc(100vh - 8.5rem); */
+  /* position: relative; */
 }
 main > h2 {
   text-align: center;
@@ -152,7 +192,7 @@ main > .content > ul > li:hover > h3{
 }
 main > .content > ul > li > p{
   top: 0.5rem;
-  background-color: blue;
+  background-color: var(--myblue);
   color: white;
   left: 0.5rem;
   padding: 0 0.5rem;
@@ -187,7 +227,7 @@ main > .content > ul > li > p{
 }
 .pagination > button:hover {
   box-shadow: 0 0 8px 1px rgb(0 0 0 / 50%);
-  background-color: blue;
+  background-color: var(--myblue);
   color: white;
   /* font-weight: bold; */
 }
@@ -195,7 +235,7 @@ main > .content > ul > li > p{
 @media (min-width:768px) {
   main{
     max-width: 1440px;
-    margin: 1rem;
+    margin: auto;
   }
   header.cabecera{
     display: flex;
