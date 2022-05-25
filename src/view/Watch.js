@@ -30,7 +30,8 @@ const Watch = () => {
             setLoading(true);
             const URL = `https://api.jikan.moe/v4/watch/episodes`;
             const { data } = await fetch( URL , {cache: 'no-cache', signal:controller.signal} ).then(e=>e.json());
-            const dataItems = data.slice(0,25).map(transformData);
+            // const dataItems = data.slice(0,25).map(transformData);
+            const dataItems = data.map(transformData);
             setData({dataItems:dataItems});
             setLoading(false);
         }

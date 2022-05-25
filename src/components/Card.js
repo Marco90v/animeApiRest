@@ -8,7 +8,7 @@ const Card = ({ anime }) => {
                 <img src={ image_url } alt={ nombre } />
             </picture>
             <h3>{ title }</h3>
-            <p>{ badge }</p>
+            { badge && <p>{ badge }</p> }
         </li>
     );
 }
