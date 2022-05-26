@@ -1,12 +1,19 @@
-import { useState } from "react"
-import { NavLink } from "react-router-dom";
+import { useRef, useState } from "react"
+import { NavLink, useNavigate } from "react-router-dom";
 
 const Header = () => {
-
+    
+    let navigate = useNavigate();
+    const inputRef = useRef();
     const [activeMenu, setActiveMenu] = useState(false);
-    const changeMenu = () => {
-        setActiveMenu(!activeMenu);
-    }
+
+    const changeMenu = () =>  setActiveMenu(!activeMenu);
+
+    const search = (e) => {
+        e.preventDefault();
+        navigate(`/search/${inputRef.current.value}`);
+    };
+
     return(
         <header className="cabecera">
             <h1>
@@ -22,19 +29,25 @@ const Header = () => {
             </h1>
             <nav className={activeMenu ? 'active' : ''}>
                 <ul>
-                    <li><NavLink to="/" className={ ({isActive}) => isActive ? 'active' : undefined }>TOP</NavLink></li>
-                    <li><NavLink to="/watch" className={ ({isActive}) => isActive ? 'active' : undefined }>WATCH</NavLink></li>
-                    <li><NavLink to="/Recommendations" className={ ({isActive}) => isActive ? 'active' : undefined }>RECOMMENDATIONS</NavLink></li>
+                    <li>
+                        <NavLink to="/" className={ ({isActive}) => isActive ? 'active' : undefined }>TOP</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/watch" className={ ({isActive}) => isActive ? 'active' : undefined }>WATCH</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/Recommendations" className={ ({isActive}) => isActive ? 'active' : undefined }>RECOMMENDATIONS</NavLink>
+                    </li>
                 </ul>
                 <div className="search">
-                    <form action="">
-                        <input type="text" name="search" id="" />
+                    <form action="" onSubmit={search}>
+                        <input ref={ inputRef } type="text" name="search" id="search" />
                         <button type="submit">SEARCH</button>
                     </form>
                 </div>
             </nav>
         </header>
-    )
+    );
 }
 
 export default Header
