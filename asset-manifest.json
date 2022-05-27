@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/animeApiRest/static/css/main.ea38fe04.css",
+    "main.js": "/animeApiRest/static/js/main.d1917fb9.js",
+    "static/js/787.e616957c.chunk.js": "/animeApiRest/static/js/787.e616957c.chunk.js",
+    "index.html": "/animeApiRest/index.html",
+    "main.ea38fe04.css.map": "/animeApiRest/static/css/main.ea38fe04.css.map",
+    "main.d1917fb9.js.map": "/animeApiRest/static/js/main.d1917fb9.js.map",
+    "787.e616957c.chunk.js.map": "/animeApiRest/static/js/787.e616957c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ea38fe04.css",
+    "static/js/main.d1917fb9.js"
+  ]
+}
