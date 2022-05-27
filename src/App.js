@@ -16,11 +16,11 @@ function App() {
       <Header />
       <main>
         <Routes>
-          <Route path="/" element={<Top />} />
-          <Route path="watch" element={<Watch />} />
-          <Route path="recommendations" element={<Recommendations />} />
-          <Route path="search/:query" element={<Search />} />
-          <Route path="details/:mal_id" element={<Details />} />
+          <Route path="animeApiRest/" element={<Top />} />
+          <Route path="animeApiRest/watch" element={<Watch />} />
+          <Route path="animeApiRest/recommendations" element={<Recommendations />} />
+          <Route path="animeApiRest/search/:query" element={<Search />} />
+          <Route path="animeApiRest/details/:mal_id" element={<Details />} />
           <Route path="*" element={<NoMatch />} />
         </Routes>
       </main>

@@ -30,13 +30,13 @@ const Header = () => {
             <nav className={activeMenu ? 'active' : ''}>
                 <ul>
                     <li>
-                        <NavLink to="/" className={ ({isActive}) => isActive ? 'active' : undefined }>TOP</NavLink>
+                        <NavLink to="animeApiRest/" className={ ({isActive}) => isActive ? 'active' : undefined }>TOP</NavLink>
                     </li>
                     <li>
-                        <NavLink to="/watch" className={ ({isActive}) => isActive ? 'active' : undefined }>WATCH</NavLink>
+                        <NavLink to="animeApiRest/watch" className={ ({isActive}) => isActive ? 'active' : undefined }>WATCH</NavLink>
                     </li>
                     <li>
-                        <NavLink to="/Recommendations" className={ ({isActive}) => isActive ? 'active' : undefined }>RECOMMENDATIONS</NavLink>
+                        <NavLink to="animeApiRest/Recommendations" className={ ({isActive}) => isActive ? 'active' : undefined }>RECOMMENDATIONS</NavLink>
                     </li>
                 </ul>
                 <div className="search">
