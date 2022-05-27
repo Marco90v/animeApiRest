@@ -147,6 +147,8 @@ main > article {
 }
 main > article > picture > img{
   max-width: 347px;
+  border-radius: 1rem;
+  box-shadow: 5px 5px 5px 1px rgb(128 128 128 / 50%);
 }
 main > article > section > * {
   margin: 0.5rem 0;
@@ -192,6 +194,9 @@ main > .content > ul > li > a > picture > img {
   height: 100%;
   border-radius: .5rem;
   transition: all .2s ease-in-out;
+}
+main > .content > ul > li:hover{
+  box-shadow: 0px 0px 10px 1px rgb(0 0 0 / 50%);
 }
 main > .content > ul > li:hover > a > picture > img {
   transform: scale(1.05);
