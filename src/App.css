@@ -149,6 +149,7 @@ main > article > picture > img{
   max-width: 347px;
   border-radius: 1rem;
   box-shadow: 5px 5px 5px 1px rgb(128 128 128 / 50%);
+  border: 1px solid rgb(128 128 128 / 50%);
 }
 main > article > section > * {
   margin: 0.5rem 0;
