@@ -5,6 +5,8 @@ import Pagination from '../components/Pagination';
 import Spinner from '../components/Spinner';
 
 const Top = () => {
+    document.title ="Anime - Top | Api Rest";
+
     const initialState =  {
         dataItems:[],
         dataPage:{

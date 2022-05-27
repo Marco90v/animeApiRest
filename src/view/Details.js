@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 import Spinner from "../components/Spinner";
 
 const Details = () => {
+    document.title ="Anime - Details | Api Rest";
+
     const { mal_id } = useParams();
 
     const initialState =  {
@@ -33,6 +35,7 @@ const Details = () => {
                 const URL = `https://api.jikan.moe/v4/anime/${mal_id}`;
                 const { data } = await fetch( URL , {cache: 'no-cache', signal:controller.signal} ).then(e=>e.json());
                 const dataItems = transformData(data);
+                document.title = `Anime - ${dataItems.title | dataItems.title_english} | Api Rest`;
                 setData(dataItems);
                 setLoading(false);
             } catch (error) {

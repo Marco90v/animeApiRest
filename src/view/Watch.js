@@ -3,6 +3,8 @@ import Card from "../components/Card";
 import Spinner from "../components/Spinner";
 
 const Watch = () => {
+    document.title ="Anime - Watch | Api Rest";
+
     const initialState =  {
         dataItems:[]
     }

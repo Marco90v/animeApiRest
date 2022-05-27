@@ -4,6 +4,8 @@ import Pagination from "../components/Pagination";
 import Spinner from "../components/Spinner"
 
 const Recommendations = () => {
+    document.title ="Anime - Recommendation | Api Rest";
+
     const initialState =  {
         dataItems:[],
         dataPage:{

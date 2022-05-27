@@ -5,6 +5,7 @@ import Pagination from "../components/Pagination";
 import Spinner from "../components/Spinner";
 
 const Search = () => {
+    document.title ="Anime - Search | Api Rest";
 
     const { query } = useParams();
 
