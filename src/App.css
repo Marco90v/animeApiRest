@@ -142,6 +142,27 @@ main{
   /* height: calc(100vh - 8.5rem); */
   /* position: relative; */
 }
+main > article {
+  margin: 1rem;
+}
+main > article > picture > img{
+  max-width: 347px;
+}
+main > article > section > * {
+  margin: 0.5rem 0;
+}
+main > article > section > h2 {
+  font-size: 2rem;
+}
+main > article > section > h3 {
+  font-size: 1.5rem;
+}
+main > article > section > p, main > article > section > p > strong {
+  font-size: 1.2rem;
+}
+main > article > section > p:last-child {
+  text-align: justify;
+}
 main > h2 {
   text-align: center;
   font-size: 2rem;
@@ -167,18 +188,19 @@ main > .content > ul > li {
   min-width: 225px;
   min-height: 354px;
 }
-main > .content > ul > li > picture > img {
+main > .content > ul > li > a > picture > img {
   height: 100%;
   border-radius: .5rem;
   transition: all .2s ease-in-out;
 }
-main > .content > ul > li:hover > picture > img {
+main > .content > ul > li:hover > a > picture > img {
   transform: scale(1.05);
 }
-main > .content > ul > li > h3, main > .content > ul > li > p {
+main > .content > ul > li > a > h3,
+main > .content > ul > li > a > p {
   position: absolute;
 }
-main > .content > ul > li > h3{
+main > .content > ul > li > a > h3{
   bottom: 0;
   color: white;
   background-color: #0000008c;
@@ -187,10 +209,10 @@ main > .content > ul > li > h3{
   letter-spacing: 2px;
   transition: all .2s ease-in-out;
 }
-main > .content > ul > li:hover > h3{
+main > .content > ul > li:hover > a > h3{
   background-color: #000000;
 }
-main > .content > ul > li > p{
+main > .content > ul > li > a > p{
   top: 0.5rem;
   background-color: var(--myblue);
   color: white;
@@ -244,7 +266,11 @@ main > .content > ul > li > p{
     align-items: center;
     justify-content: space-around;
   }
-  header.cabecera > h1, nav, nav > ul > li, .search, .search > form {
+  header.cabecera > h1,
+  nav,
+  nav > ul > li,
+  .search,
+  .search > form {
     display: inline;
   }
   nav > ul{
@@ -258,5 +284,10 @@ main > .content > ul > li > p{
   }
   header.cabecera > nav > .search{
     margin-left: 3rem;
+  }
+  main > article {
+    display: grid;
+    grid-template-columns: 375px auto;
+    margin: 3rem 0;
   }
 }

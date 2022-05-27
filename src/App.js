@@ -6,6 +6,7 @@ import Watch from './view/Watch';
 import NoMatch from './view/NoMatch';
 import Recommendations from './view/Recommendation';
 import Search from './view/Search';
+import Details from './view/Details';
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
           <Route path="watch" element={<Watch />} />
           <Route path="recommendations" element={<Recommendations />} />
           <Route path="search/:query" element={<Search />} />
+          <Route path="details/:mal_id" element={<Details />} />
           <Route path="*" element={<NoMatch />} />
         </Routes>
       </main>
