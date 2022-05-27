@@ -34,20 +34,22 @@ const Top = () => {
     const getFetch = async(page=1) => {
         if(data.dataPage.current_page !== page && !loading){
             setLoading(true);
-            const URL = `https://api.jikan.moe/v4/top/anime?page=${page}`;
-            const {pagination, data} = await fetch( URL , {cache: 'no-cache', signal:controller.signal} ).then(e=>e.json());
-            const dataItems = data.map(transformData);
-            const dataPage = { last_visible_page: pagination.last_visible_page, current_page: pagination.current_page };
-            setData({dataItems, dataPage});
-            setLoading(false);
+            try {
+                const URL = `https://api.jikan.moe/v4/top/anime?page=${page}`;
+                const {pagination, data} = await fetch( URL , {cache: 'no-cache', signal:controller.signal} ).then(e=>e.json());
+                const dataItems = data.map(transformData);
+                const dataPage = { last_visible_page: pagination.last_visible_page, current_page: pagination.current_page };
+                setData({dataItems, dataPage});
+                setLoading(false);
+            } catch (error) {
+                setLoading(false);
+            }
         }
     }
 
     useEffect(() => {
         getFetch();
-        return () => {
-            controller.abort();
-        }
+        return () => controller.abort();
     // eslint-disable-next-line react-hooks/exhaustive-deps
     },[]);
     

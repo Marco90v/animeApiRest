@@ -54,7 +54,7 @@ header.cabecera > nav {
   height: 0rem;
 }
 header.cabecera > nav.active {
-  height: 15rem;
+  height: 16rem;
 }
 header.cabecera > h1{
   font-size: 3rem;
@@ -258,7 +258,18 @@ main > .content > ul > li > a > p{
   color: white;
   /* font-weight: bold; */
 }
-
+.error404 {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+}
+.error404 > p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+}
 @media (min-width:768px) {
   main{
     max-width: 1440px;

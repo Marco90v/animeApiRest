@@ -28,20 +28,21 @@ const Watch = () => {
     const getFetch = async() => {
         if(!loading){
             setLoading(true);
-            const URL = `https://api.jikan.moe/v4/watch/episodes`;
-            const { data } = await fetch( URL , {cache: 'no-cache', signal:controller.signal} ).then(e=>e.json());
-            // const dataItems = data.slice(0,25).map(transformData);
-            const dataItems = data.map(transformData);
-            setData({dataItems:dataItems});
-            setLoading(false);
+            try {
+                const URL = `https://api.jikan.moe/v4/watch/episodes`;
+                const { data } = await fetch( URL , {cache: 'no-cache', signal:controller.signal} ).then(e=>e.json());
+                const dataItems = data.map(transformData);
+                setData({dataItems:dataItems});
+                setLoading(false);
+            } catch (error) {
+                setLoading(false);
+            }
         }
     }
 
     useEffect(() => {
         getFetch();
-        return () => {
-            controller.abort();
-        }
+        return () => controller.abort();
     // eslint-disable-next-line react-hooks/exhaustive-deps
     },[]);
 

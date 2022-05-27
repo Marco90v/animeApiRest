@@ -43,33 +43,34 @@ const Recommendations = () => {
     const getFetch = async(page=1) => {
         if(!loading){
             setLoading(true);
-            const URL = `https://api.jikan.moe/v4/recommendations/anime?page=${page}`;
-            const {pagination, data} = await fetch( URL , {cache: 'no-cache', signal:controller.signal} ).then(e=>e.json());
-            const dataItems = data.map(transformData).flat().reduce( (acc,item)=>{
-                let valida = false;
-                for (const e of acc) {
-                    if(e.mal_id === item.mal_id){
-                        valida = true;
-                        break;
+            try {
+                const URL = `https://api.jikan.moe/v4/recommendations/anime?page=${page}`;
+                const {pagination, data} = await fetch( URL , {cache: 'no-cache', signal:controller.signal} ).then(e=>e.json());
+                const dataItems = data.map(transformData).flat().reduce( (acc,item)=>{
+                    let valida = false;
+                    for (const e of acc) {
+                        if(e.mal_id === item.mal_id){
+                            valida = true;
+                            break;
+                        }
                     }
-                }
-                if(!valida) acc.push(item);
-                return acc;
-            },[] );
-            const dataPage = { last_visible_page: pagination.last_visible_page, current_page: page };
-            setData({dataItems, dataPage});
-            setLoading(false);
+                    if(!valida) acc.push(item);
+                    return acc;
+                },[] );
+                const dataPage = { last_visible_page: pagination.last_visible_page, current_page: page };
+                setData({dataItems, dataPage});
+                setLoading(false);
+            } catch (error) {
+                setLoading(false);
+            }
         }
     }
 
     useEffect(() => {
         getFetch();
-        return () => {
-            controller.abort();
-        }
+        return () => controller.abort();
     // eslint-disable-next-line react-hooks/exhaustive-deps
     },[]);
-
 
     return(
         <>

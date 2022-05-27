@@ -1,8 +1,8 @@
 const NoMatch = () => {
     return(
-        <>
-            <h1>404</h1>
-        </>
+        <div className="error404">
+            <p>Page not found</p>
+        </div>
     )
 }
 
