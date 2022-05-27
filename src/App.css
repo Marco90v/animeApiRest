@@ -138,7 +138,7 @@ header.cabecera > nav > .search{
 }
 main{
   max-width: 1440px;
-  min-height: calc(100vh - 328px);
+  min-height: calc(100vh - 258px);
 }
 main > article {
   margin: 1rem;
