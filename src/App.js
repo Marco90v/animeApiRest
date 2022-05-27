@@ -7,6 +7,7 @@ import NoMatch from './view/NoMatch';
 import Recommendations from './view/Recommendation';
 import Search from './view/Search';
 import Details from './view/Details';
+import Footer from './components/Footer';
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
           <Route path="*" element={<NoMatch />} />
         </Routes>
       </main>
+      <Footer />
     </>
   );
 }
