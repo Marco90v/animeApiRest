@@ -139,9 +139,6 @@ header.cabecera > nav > .search{
 main{
   max-width: 1440px;
   min-height: calc(100vh - 328px);
-  /* margin: 1rem; */
-  /* height: calc(100vh - 8.5rem); */
-  /* position: relative; */
 }
 main > article {
   margin: 1rem;
@@ -258,7 +255,6 @@ main > .content > ul > li > a > p{
   box-shadow: 0 0 8px 1px rgb(0 0 0 / 50%);
   background-color: var(--myblue);
   color: white;
-  /* font-weight: bold; */
 }
 .error404 {
   position: fixed;
@@ -276,13 +272,10 @@ footer {
   height: 10rem;
   display: grid;
   margin-top: 2rem;
+  padding-bottom: 1rem;
   grid-template-rows: auto 2rem;
   background-color: black;
   color: white;
-
-  /* position: absolute; */
-  /* width: 100%; */
-  /* bottom: 0; */
 }
 footer > ul {
   list-style: none;

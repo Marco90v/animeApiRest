@@ -5,8 +5,6 @@ import Spinner from "../components/Spinner";
 const Details = () => {
     const { mal_id } = useParams();
 
-    // large_image_url, title, title_english, title_japanese, type, aired(string), episodes, duration, synopsis
-
     const initialState =  {
         dataItems:{}
     }
@@ -44,9 +42,7 @@ const Details = () => {
     }
     useEffect(() => {
         getFetch();
-        return () => {
-            controller.abort();
-        }
+        return () => controller.abort();
     // eslint-disable-next-line react-hooks/exhaustive-deps
     },[]);
 

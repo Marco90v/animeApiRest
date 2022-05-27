@@ -52,9 +52,7 @@ const Search = () => {
 
     useEffect(() => {
         getFetch();
-        return () => {
-            controller.abort();
-        }
+        return () => controller.abort();
     // eslint-disable-next-line react-hooks/exhaustive-deps
     },[query]);
 
